@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | AgriConnect SA</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h2>🌱 AgriConnect SA</h2>
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Marketplace</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="CustomerSupportBot.html">Chatbot</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="checkout">
+
+<h1>Checkout</h1>
+
+<div class="checkout-container">
+
+<div class="customer-details">
+
+<h2>Customer Information</h2>
+
+<form id="checkoutForm">
+
+<input
+type="text"
+id="fullname"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
+
+<textarea
+id="address"
+placeholder="Delivery Address"
+required></textarea>
+
+<select id="province">
+
+<option>Gauteng</option>
+
+<option>Limpopo</option>
+
+<option>Mpumalanga</option>
+
+<option>Free State</option>
+
+<option>KwaZulu-Natal</option>
+
+<option>Western Cape</option>
+
+<option>Eastern Cape</option>
+
+<option>North West</option>
+
+<option>Northern Cape</option>
+
+</select>
+
+<h3>Payment Method</h3>
+
+<label>
+
+<input type="radio"
+name="payment"
+checked>
+
+Credit / Debit Card
+
+</label>
+
+<label>
+
+<input type="radio"
+name="payment">
+
+EFT
+
+</label>
+
+<label>
+
+<input type="radio"
+name="payment">
+
+Mobile Payment
+
+</label>
+
+<button
+type="submit"
+class="btn">
+
+Place Order
+
+</button>
+
+</form>
+
+</div>
+
+<div class="order-summary">
+
+<h2>Your Order</h2>
+
+<div id="checkout-items"></div>
+
+<h3>Total
+
+<span id="checkout-total">
+
+R0
+
+</span>
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/checkout.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/chatbot.js"></script>
+</body>
+
+</html>

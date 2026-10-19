@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- JGA-Dictators -->
+<!-- File name index.html -->
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriConnect SA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/4e4d0d62f3.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+    <header>
+
+         <div class="logo">
+
+          <h2>🌱 AgriConnect SA</h2>
+
+          </div>
+
+     <nav>
+
+        <ul>
+
+              <li><a href="index.html">Home</a></li>
+
+              <li><a href="products.html">Products</a></li>
+
+			  <li><a href="farmers.html">Farmers</a></li>
+
+			  <li><a href="statistics.html">Statistics</a></li>
+
+<li><a href="about.html">About</a></li>
+
+			  <li><a href="contact.html">Contact</a></li>
+
+			  <li>
+                  <a href="cart.html">
+
+                   🛒
+
+                  <span id="cart-count">0</span>
+
+			      </a>
+               </li>
+			   <li> <a href ="profile.html"> Profile </a></li>
+			   <li><a href="community.html">Community hub</a></li>
+			   
+
+
+		</ul>
+
+	 </nav>
+	 <button id="darkMode">
+
+       🌙
+
+     </button>
+
+	</header>
+<section class="checkout">
+
+<h1>My Profile</h1>
+
+<div class="customer-details">
+
+<h2 id="welcome"></h2>
+
+<button
+class="btn"
+onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+</section>
+<script src="js/chatbot.js"></script>
+</body>
+<footer>
+
+	<p>
+
+		© 2026 AgriConnect SA | Empowering Agriculture Through Technology
+
+	</p>
+
+</footer>
+
+<script>
+
+let user=JSON.parse(localStorage.getItem("currentUser"));
+
+document.getElementById("welcome").innerHTML=
+
+"Welcome "+user.fullname;
+
+function logout(){
+
+localStorage.removeItem("currentUser");
+
+window.location="login.html";
+
+}
+
+</script>

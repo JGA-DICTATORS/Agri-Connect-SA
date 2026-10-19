@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farmer Dashboard | AgriConnect SA</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h2>🌱 AgriConnect SA</h2>
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Marketplace</a></li>
+
+<li><a href="farmers.html">Dashboard</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="dashboard">
+
+<h1>Farmer Dashboard</h1>
+
+<div class="dashboard-cards">
+
+<div class="card">
+
+<h2 id="productsCount">0</h2>
+
+<p>Products Listed</p>
+
+</div>
+
+<div class="card">
+
+<h2>R245 000</h2>
+
+<p>Monthly Sales</p>
+
+</div>
+
+<div class="card">
+
+<h2>150</h2>
+
+<p>Orders</p>
+
+</div>
+
+<div class="card">
+
+<h2>4.9 ★</h2>
+
+<p>Farmer Rating</p>
+
+</div>
+
+</div>
+
+<div class="add-product">
+
+<h2>Add Product</h2>
+
+<form id="productForm">
+
+<input
+type="text"
+id="productName"
+placeholder="Product Name"
+required>
+
+<input
+type="number"
+id="productPrice"
+placeholder="Price"
+required>
+
+<input
+type="number"
+id="productQuantity"
+placeholder="Quantity"
+required>
+
+<select id="category">
+
+<option>Vegetables</option>
+
+<option>Fruit</option>
+
+<option>Livestock</option>
+
+<option>Equipment</option>
+
+</select>
+
+<textarea
+id="description"
+placeholder="Product Description"></textarea>
+
+<input
+type="file"
+id="image">
+
+<button class="btn">
+
+Add Product
+
+</button>
+
+</form>
+
+</div>
+
+<h2 style="margin-top:60px;">
+My Products
+</h2>
+
+<table class="cart-table">
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+
+<th>Category</th>
+
+<th>Price</th>
+
+<th>Quantity</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="farmerProducts">
+
+</tbody>
+
+</table>
+
+</section>
+
+<script src="js/farmers.js"></script>
+
+<script src="js/chatbot.js"></script>
+</body>
+
+</html>

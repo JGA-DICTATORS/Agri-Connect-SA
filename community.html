@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html
+><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AgriConnect Community</title>
+<link rel="stylesheet" href="css/community.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+<header class="topbar">
+
+<div class="logo">
+<h2>🌱 AgriConnect SA</h2>
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Marketplace</a></li>
+
+<li><a href="farmers.html">Farmers</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="cart.html">
+🛒 <span id="cart-count">0</span>
+</a>
+</li>
+<li> <a href ="profile.html"> Profile </a></li>
+
+</ul>
+
+</nav>
+
+<button id="darkMode">🌙</button>
+
+</header>
+<section class="hero">
+ <h1>Connect. Learn. Grow Together.</h1>
+ <p>Join South African farmers sharing advice, solving problems and building profitable farms together.</p>
+ <a href="#feed" class="hero-btn">Join Discussion</a>
+ <a href="#newPost" class="hero-btn alt" id="askBtn">Ask a Question</a>
+</section>
+<section class="stats">
+ <div><h2 id="statPosts">0</h2><p>Discussions</p></div>
+ <div><h2 id="statReplies">0</h2><p>Replies</p></div>
+ <div><h2 id="statLikes">0</h2><p>Likes</p></div>
+ <div><h2>9</h2><p>Provinces</p></div>
+</section>
+<main class="grid">
+ <section>
+  <form id="newPost" class="card composer">
+   <h2>Start a discussion</h2>
+   <p id="authNote" class="note"></p>
+   <div class="row">
+    <select id="postCategory" aria-label="Category">
+     <option>Crops</option><option>Livestock</option><option>Equipment</option><option>Market &amp; Prices</option><option>General</option>
+    </select>
+    <input id="postTitle" type="text" maxlength="100" placeholder="Title (e.g. Best maize seed for Free State?)" required>
+   </div>
+   <textarea id="postText" rows="3" maxlength="1000" placeholder="Share your question or advice…" required></textarea>
+   <div class="row between"><small id="charCount">0 / 1000</small><button type="submit" class="post-btn">Post</button></div>
+  </form>
+
+  <div class="toolbar" id="feed">
+   <input id="searchPosts" type="search" placeholder="Search discussions…" aria-label="Search discussions">
+   <select id="filterCategory" aria-label="Filter by category"><option value="">All categories</option><option>Crops</option><option>Livestock</option><option>Equipment</option><option>Market &amp; Prices</option><option>General</option></select>
+   <select id="sortPosts" aria-label="Sort"><option value="new">Newest</option><option value="top">Most liked</option><option value="active">Most replies</option></select>
+  </div>
+  <div id="posts" aria-live="polite"></div>
+ </section>
+ <aside>
+  <div class="card"><h3>Top contributors</h3><ol id="leaders"><li>No activity yet</li></ol></div>
+  <div class="card"><h3>Community guidelines</h3><ul class="guide"><li>Be respectful and helpful</li><li>No spam or advertising</li><li>For animal health emergencies, call a vet</li></ul></div>
+ </aside>
+</main>
+<script src="js/app.js"></script>
+<script src="js/darkmode.js"></script>
+<script src="js/community.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

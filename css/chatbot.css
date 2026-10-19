@@ -1,0 +1,38 @@
+/* AgriBot chat widget */
+#agribot{--ab-main:#2e7d32;--ab-main-dark:#1b5e20;--ab-bg:#fff;--ab-text:#222;--ab-muted:#6b6b6b;--ab-log:#f4f6f1;--ab-bot:#fff;--ab-user:#2e7d32;--ab-border:#e3e6dd;
+  position:fixed;right:20px;bottom:20px;z-index:99999;font-family:'Poppins',system-ui,sans-serif;font-size:14px}
+body.dark #agribot{--ab-bg:#1f2420;--ab-text:#eee;--ab-muted:#a0a8a0;--ab-log:#171b18;--ab-bot:#2a302b;--ab-border:#363d37}
+#agribot *{box-sizing:border-box}
+#agribot .ab-fab{width:58px;height:58px;border-radius:50%;border:0;background:var(--ab-main);color:#fff;font-size:26px;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;margin-left:auto;transition:transform .15s,background .15s}
+#agribot .ab-fab:hover{transform:scale(1.08);background:var(--ab-main-dark)}
+#agribot .ab-fab:focus-visible,#agribot button:focus-visible,#agribot input:focus-visible{outline:3px solid #ffb300;outline-offset:2px}
+#agribot .ab-panel{position:absolute;right:0;bottom:70px;width:360px;max-width:calc(100vw - 40px);height:540px;max-height:calc(100vh - 110px);
+  background:var(--ab-bg);color:var(--ab-text);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.28);display:flex;flex-direction:column;overflow:hidden;
+  transform:translateY(12px) scale(.96);opacity:0;visibility:hidden;transition:all .2s ease;transform-origin:bottom right}
+#agribot.open .ab-panel{transform:none;opacity:1;visibility:visible}
+#agribot .ab-head{background:var(--ab-main);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+#agribot .ab-head .ab-av{font-size:26px}
+#agribot .ab-head strong{display:block;font-size:15px}
+#agribot .ab-head small{opacity:.85;font-size:12px}
+#agribot .ab-head button{margin-left:auto;background:none;border:0;color:#fff;font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px}
+#agribot .ab-head button:hover{background:rgba(255,255,255,.18)}
+#agribot .ab-log{flex:1;overflow-y:auto;padding:12px;background:var(--ab-log);display:flex;flex-direction:column;gap:8px}
+#agribot .ab-msg{max-width:85%;padding:9px 12px;border-radius:14px;line-height:1.45;word-wrap:break-word;white-space:pre-wrap}
+#agribot .ab-msg.bot{background:var(--ab-bot);border:1px solid var(--ab-border);border-bottom-left-radius:4px;align-self:flex-start}
+#agribot .ab-msg.user{background:var(--ab-user);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+#agribot .ab-msg a{color:var(--ab-main);font-weight:600}
+body.dark #agribot .ab-msg a{color:#81c784}
+#agribot .ab-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 10px;background:var(--ab-log)}
+#agribot .ab-chips button{border:1px solid var(--ab-main);background:transparent;color:var(--ab-main);border-radius:16px;padding:5px 11px;font-size:12.5px;cursor:pointer;font-family:inherit}
+body.dark #agribot .ab-chips button{color:#81c784;border-color:#81c784}
+#agribot .ab-chips button:hover{background:var(--ab-main);color:#fff}
+#agribot .ab-typing span{display:inline-block;width:6px;height:6px;margin:0 2px;border-radius:50%;background:var(--ab-muted);animation:ab-b 1.1s infinite}
+#agribot .ab-typing span:nth-child(2){animation-delay:.15s}#agribot .ab-typing span:nth-child(3){animation-delay:.3s}
+@keyframes ab-b{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+#agribot form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--ab-border);background:var(--ab-bg)}
+#agribot input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--ab-border);border-radius:20px;background:var(--ab-bg);color:var(--ab-text);font:inherit}
+#agribot form button{border:0;background:var(--ab-main);color:#fff;border-radius:20px;padding:0 16px;font:inherit;font-weight:600;cursor:pointer}
+#agribot form button:hover{background:var(--ab-main-dark)}
+@media(max-width:480px){#agribot{right:12px;bottom:12px}#agribot .ab-panel{width:calc(100vw - 24px);height:calc(100vh - 100px)}}
+@media(prefers-reduced-motion:reduce){#agribot *{transition:none!important;animation:none!important}}

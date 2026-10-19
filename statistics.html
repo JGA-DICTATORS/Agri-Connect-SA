@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistics | AgriConnect SA</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/statistics.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <div class="logo"><h2>🌱 AgriConnect SA</h2></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Marketplace</a></li>
+      <li><a href="farmers.html">Farmers</a></li>
+      <li><a href="statistics.html">Statistics</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">🛒 <span id="cart-count">0</span></a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="community.html">Community hub</a></li>
+    </ul>
+  </nav>
+  <button id="darkMode">🌙</button>
+</header>
+
+<main class="stats-page">
+
+  <section class="stats-intro">
+    <h1>Marketplace Statistics</h1>
+    <p>Descriptive statistics for every product listed on the AgriConnect SA marketplace. Change the filters and everything recalculates.</p>
+  </section>
+
+  <section class="controls">
+    <label>Measure
+      <select id="metric">
+        <option value="price">Price (R)</option>
+        <option value="rating">Rating (stars)</option>
+      </select>
+    </label>
+    <label>Category
+      <select id="category">
+        <option value="all">All categories</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Fruit">Fruit</option>
+        <option value="Livestock">Livestock</option>
+        <option value="Equipment">Equipment</option>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" id="noOutliers"> Exclude outliers (1.5 × IQR rule)</label>
+    <label class="check" id="farmerWrap" hidden><input type="checkbox" id="useFarmer"> Include my dashboard listings (<span id="farmerCount">0</span>)</label>
+  </section>
+
+  <p id="insight" class="insight"></p>
+
+  <section class="stat-grid" id="statGrid"></section>
+
+  <section class="chart-grid">
+    <div class="panel">
+      <h3>Listings by category</h3>
+      <div class="chart-box"><canvas id="pieCategory"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3 id="ratingTitle">Rating distribution</h3>
+      <div class="chart-box"><canvas id="pieRating"></canvas></div>
+    </div>
+    <div class="panel wide">
+      <div class="panel-head">
+        <h3 id="barTitle">Price per product</h3>
+        <label class="check"><input type="checkbox" id="logScale" checked> Log scale</label>
+      </div>
+      <div class="chart-box tall"><canvas id="barChart"></canvas></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h3>Data used</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Product</th><th>Category</th><th>Price (R)</th><th>Rating</th><th></th></tr></thead>
+        <tbody id="dataBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel glossary">
+    <h3>What the numbers mean</h3>
+    <dl>
+      <dt>Mean</dt><dd>The average: the sum divided by the count. Sensitive to extreme values.</dd>
+      <dt>Median</dt><dd>The middle value when sorted. Barely affected by extremes.</dd>
+      <dt>Mode</dt><dd>The most frequent value. A set can have several modes, or none.</dd>
+      <dt>Std deviation</dt><dd>How spread out values are around the mean (sample version, n − 1).</dd>
+      <dt>Q1 / Q3 / IQR</dt><dd>The 25th and 75th percentiles and the distance between them.</dd>
+      <dt>Skewness</dt><dd>Above 0 means a long tail of high values; below 0 means a tail of low ones.</dd>
+    </dl>
+  </section>
+
+</main>
+
+<footer><p>© 2026 AgriConnect SA</p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/darkmode.js"></script>
+<script src="js/statistics.js"></script>
+</body>
+</html>

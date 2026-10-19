@@ -1,0 +1,57 @@
+@media(max-width:900px){
+
+header{
+
+flex-direction:column;
+
+padding:20px;
+
+}
+
+nav ul{
+
+margin-top:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+nav ul li{
+
+margin:10px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.products{
+
+grid-template-columns:1fr;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+}
